@@ -27,4 +27,4 @@ const sportpesa = {
   },
 };
 
-module.exports = { odibets: sportpesa };
+module.exports = { sportpesa };
