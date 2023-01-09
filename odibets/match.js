@@ -44,7 +44,7 @@ function getPreMatches(sport_id = "soccer", limit = 10) {
             });
           }
         });
-        resolve(matches.splice(0, limit));
+        resolve(matches.splice(0, limit).sort((a, b) => a.start_time - b.start_time));
       })
       .catch((error) => {
         if (error.response) {
@@ -102,7 +102,7 @@ function getLiveMatches(sport_id = "soccer", limit = 1) {
             });
           }
         });
-        resolve(matches.splice(0, limit));
+        resolve(matches.splice(0, limit).sort((a, b) => a.start_time - b.start_time));
       })
       .catch((error) => {
         if (error.response) {
@@ -165,7 +165,7 @@ function getMatchMarkets(parent_match_id, sub_type_id = "") {
             ),
           });
         });
-        resolve(markets);
+        resolve(markets.sort((a, b) => a.sub_type_id - b.sub_type_id));
       })
       .catch((error) => {
         if (error.response) {

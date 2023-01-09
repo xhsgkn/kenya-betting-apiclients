@@ -37,7 +37,7 @@ function getPreMatches(sport_id = 14, page = 0, limit = 10) {
             start_time: moment(match.start_time, "YYYY-MM-DD h:mm:ss").unix(),
           });
         });
-        resolve(matches);
+        resolve(matches.sort((a, b) => a.start_time - b.start_time));
       })
       .catch((error) => {
         if (error.response) {
@@ -74,7 +74,7 @@ function getLiveMatches(sport_id = 14, page = 0, limit = 1) {
             start_time: moment(match.start_time, "YYYY-MM-DD h:mm:ss").unix(),
           });
         });
-        resolve(matches);
+        resolve(matches.sort((a, b) => a.start_time - b.start_time));
       })
       .catch((error) => {
         if (error.response) {
@@ -115,7 +115,7 @@ function getMatchMarkets(parent_match_id) {
             })
           });
         });
-        resolve(markets);
+        resolve(markets.sort((a, b) => a.sub_type_id - b.sub_type_id));
       })
       .catch((error) => {
         if (error.response) {
