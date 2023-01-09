@@ -14,7 +14,7 @@ const headers = {
   "x-requested-with": "com.dmk.betika",
 };
 
-function getPreMatches(sport_id = 14, page = 0, limit = 1) {
+function getPreMatches(sport_id = 14, page = 0, limit = 10) {
   const url = `https://api.betika.com/v1/uo/matches?page=${page}&limit=${limit}&sub_type_id=1&sport_id=${sport_id}&sort_id=1&period_id=-1&esports=false`;
   const matches = [];
 

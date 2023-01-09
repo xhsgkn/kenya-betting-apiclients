@@ -1,7 +1,7 @@
 const axios = require("axios");
 const moment = require("moment");
 
-function getPreMatches(sport_id = "soccer", limit = 1) {
+function getPreMatches(sport_id = "soccer", limit = 10) {
   const headers = {
     "accept": "application/json, text/plain, */*",
     "accept-language": "en-US,en;q=0.9",
